@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - 12
+branches:
+  only:
+    - master
+addons:
+  ssh_known_hosts:
+  - $IP
+before_install:
+  - openssl enc -aes-256-cbc -d -in ./.travis/deploy.enc -out ./.travis/deploy -k $KEY
+  - eval "$(ssh-agent -s)"
+  - cp ./.travis/deploy ~/.ssh/deploy
+  - chmod 600 ~/.ssh/deploy
+  - ssh-add ~/.ssh/deploy
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash .travis/deploy.sh
+    on:
+      branch: master
