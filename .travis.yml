@@ -13,6 +13,8 @@ before_install:
   - cp ./.travis/deploy ~/.ssh/deploy
   - chmod 600 ~/.ssh/deploy
   - ssh-add ~/.ssh/deploy
+install:
+  - echo $PUB >> $HOME/.ssh/known_hosts
 deploy:
   - provider: script
     skip_cleanup: true
