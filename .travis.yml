@@ -21,3 +21,7 @@ deploy:
     script: bash .travis/deploy.sh
     on:
       branch: master
+
+after_deploy:
+  - yarn install
+  - yarn start
