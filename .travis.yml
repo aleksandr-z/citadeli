@@ -23,5 +23,4 @@ deploy:
       branch: master
 
 after_deploy:
-  - yarn install
-  - yarn start
+  - ./.travis/after_deploy.sh
