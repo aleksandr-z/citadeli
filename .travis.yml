@@ -23,4 +23,5 @@ deploy:
       branch: master
 
 after_deploy:
+  - chmod +x ./.travis/after_deploy.sh
   - ./.travis/after_deploy.sh
