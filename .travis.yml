@@ -10,6 +10,8 @@ addons:
 before_install:
   - openssl enc -aes-256-cbc -d -in ./.travis/deploy.enc -out ./.travis/deploy -k $KEY
   - eval "$(ssh-agent -s)"
+  - tar -cvf archive.tar.gz ./dist/
+  - ls -al ./dist
   - cp ./.travis/deploy ~/.ssh/deploy
   - chmod 600 ~/.ssh/deploy
   - ssh-add ~/.ssh/deploy
