@@ -15,7 +15,7 @@ before_install:
   - ssh-add ~/.ssh/deploy
 install:
   - echo $PUB >> $HOME/.ssh/known_hosts
-before_install:
+after_install:
   - ls -al ./dist
   - tar -cvf archive.tar.gz ./dist/
   - ls -al ./dist
