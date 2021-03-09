@@ -19,7 +19,7 @@ install:
   - tar -cvf archive.tar.gz ./dist/
   - ls -al ./dist
   - ls -al ./
-  - chmod 600 ~/archive.tar.gz
+  - chmod 600 ./archive.tar.gz
 
 deploy:
   - provider: script
