@@ -11,6 +11,6 @@ scp -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" ./archive.ta
 echo 'copy files'
 ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/deploy $USER@$IP -p $PORT <<EOF
   cd $DEPLOY_PATH
-  tar -cvf archive.tar.gz
+  tar -xvf archive.tar.gz
   node app.js
 EOF
