@@ -16,7 +16,6 @@ before_install:
 install:
   - echo $PUB >> $HOME/.ssh/known_hosts
   - tar -cvf archive.tar.gz ./dist/
-  - ls -al ./
   - chmod 600 ./archive.tar.gz
 
 deploy:
@@ -25,7 +24,3 @@ deploy:
     script: bash .travis/deploy.sh
     on:
       branch: master
-
-#after_deploy:
-#  - chmod +x ./.travis/after_deploy.sh
-#  - ./.travis/after_deploy.sh
