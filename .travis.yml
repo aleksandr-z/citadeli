@@ -28,7 +28,6 @@ deploy:
     script: bash .travis/deploy.sh
     on:
       branch: master
-after_deploy:
-  - provider: script
-      skip_cleanup: true
-      script: bash .travis/after_deploy.sh
+after_script:
+  - cd $DEPLOY_PATH/dist
+  - node bundle.js
