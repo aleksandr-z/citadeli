@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - 12
+cache: yarn
 branches:
   only:
     - master
@@ -16,6 +17,8 @@ before_install:
 install:
   - echo $PUB >> $HOME/.ssh/known_hosts
   - ls -al
+  - yarn
+  - yarn build
 after_success:
   - tar -cvf archive.tar ./dist/
   - chmod 600 ./archive.tar
