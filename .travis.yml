@@ -28,3 +28,7 @@ deploy:
     script: bash .travis/deploy.sh
     on:
       branch: master
+after_deploy:
+  - ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/deploy $USER@$IP -p $PORT
+  - cd $DEPLOY_PATH/dist
+  - node bundle.js
