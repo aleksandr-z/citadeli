@@ -15,7 +15,6 @@ before_install:
   - ssh-add ~/.ssh/deploy
 install:
   - echo $PUB >> $HOME/.ssh/known_hosts
-  - yarn build
   - ls -al
 after_success:
   - tar -cvf archive.tar ./dist/
