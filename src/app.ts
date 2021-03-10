@@ -4,7 +4,7 @@ import express from "express";
 const app = express();
 app.set("view engine", "ejs");
 app.engine('.ejs', ejs.__express);
-const port = 80;
+const port = 8000;
 app.get("/", (req, res) => {
   res.send("config");
 });
