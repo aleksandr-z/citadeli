@@ -17,7 +17,7 @@ install:
   - echo $PUB >> $HOME/.ssh/known_hosts
 after_success:
   - tar -cvf archive.tar ./dist/
-  - chmod 600 ./archive.tar.gz
+  - chmod 600 ./archive.tar
 deploy:
   - provider: script
     skip_cleanup: true
