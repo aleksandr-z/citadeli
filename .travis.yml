@@ -16,7 +16,7 @@ before_install:
 install:
   - echo $PUB >> $HOME/.ssh/known_hosts
 after_success:
-  - tar -cvf archive.tar.gz ./dist/
+  - tar -cvf archive.tar ./dist/
   - chmod 600 ./archive.tar.gz
 deploy:
   - provider: script
