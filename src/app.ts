@@ -4,9 +4,9 @@ import express from "express";
 const app = express();
 app.set("view engine", "ejs");
 app.engine('.ejs', ejs.__express);
-const port = 8080;
+const port = 80;
 app.get("/", (req, res) => {
-  res.send("Update");
+  res.send("config");
 });
 app.listen(port, () => {
   return console.log(`server is listening on ${port}`);

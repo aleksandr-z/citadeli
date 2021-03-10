@@ -29,6 +29,6 @@ deploy:
     on:
       branch: master
 after_deploy:
-  - ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/deploy $USER@$IP -p $PORT
-  - cd $DEPLOY_PATH/dist
-  - node bundle.js
+  - provider: script
+      skip_cleanup: true
+      script: bash .travis/after_deploy.sh
