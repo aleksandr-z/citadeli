@@ -28,9 +28,6 @@ deploy:
     script: bash .travis/deploy.sh
     on:
       branch: master
-after_script:
-  - provider: script
-      skip_cleanup: true
-      script: bash .travis/after_deploy.sh
-      on:
-        branch: master
+after_deploy:
+  - bash ./.travis/after_deploy.sh
+
