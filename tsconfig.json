@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
     "sourceMap": true,
-    "outDir": "dist"
-  },
-  "lib": ["es2015"]
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true
+  }
 }
