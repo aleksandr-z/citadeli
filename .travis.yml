@@ -20,7 +20,7 @@ install:
   - yarn
   - yarn build
 after_success:
-  - tar -cvf archive.tar ./dist/
+  - tar -cvf archive.tar ./dist/ ./node_modules/
   - chmod 600 ./archive.tar
 deploy:
   - provider: script

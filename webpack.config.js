@@ -7,6 +7,7 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
+
     // externals: [nodeExternals()],
     output: {
         filename: 'bundle.js',
