@@ -1,4 +1,5 @@
 import { Model, Table, DataType, Column } from 'sequelize-typescript';
+import { ApiProperty } from '@nestjs/swagger';
 
 interface UserCreationAttributes {
   login: string;
@@ -10,6 +11,10 @@ interface UserCreationAttributes {
   tableName: 'users',
 })
 export class User extends Model<User, UserCreationAttributes> {
+  @ApiProperty({
+    example: '1',
+    description: 'Уникальный идентификатор',
+  })
   @Column({
     type: DataType.INTEGER,
     unique: true,
@@ -18,6 +23,10 @@ export class User extends Model<User, UserCreationAttributes> {
   })
   id: number;
 
+  @ApiProperty({
+    example: 'login',
+    description: 'Логин',
+  })
   @Column({
     type: DataType.STRING,
     unique: true,
@@ -25,6 +34,10 @@ export class User extends Model<User, UserCreationAttributes> {
   })
   login: string;
 
+  @ApiProperty({
+    example: 'test@test.ru',
+    description: 'Электронная почта',
+  })
   @Column({
     type: DataType.STRING,
     unique: true,
@@ -32,18 +45,30 @@ export class User extends Model<User, UserCreationAttributes> {
   })
   email: string;
 
+  @ApiProperty({
+    example: 'qwerty12345',
+    description: 'Пароль',
+  })
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   password: string;
 
+  @ApiProperty({
+    example: 'true',
+    description: 'Признак бана пользователя',
+  })
   @Column({
     type: DataType.BOOLEAN,
     defaultValue: false,
   })
   banned: boolean;
 
+  @ApiProperty({
+    example: 'Поддержка Навального',
+    description: 'Причина бана',
+  })
   @Column({
     type: DataType.STRING,
     allowNull: true,
