@@ -57,6 +57,16 @@ export class User extends Model<User, UserCreationAttributes> {
 
   @ApiProperty({
     example: 'true',
+    description: 'Пользователь подтвержден',
+  })
+  @Column({
+    type: DataType.BOOLEAN,
+    defaultValue: false,
+  })
+  confirmed: boolean;
+
+  @ApiProperty({
+    example: 'true',
     description: 'Признак бана пользователя',
   })
   @Column({

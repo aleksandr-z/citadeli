@@ -1,9 +1,7 @@
 import { User } from './users.model';
-import { usersRepository } from '../constants/providers';
+import { usersRepository } from '../constants';
 
-export const userProviders = [
-  {
-    provide: usersRepository,
-    useValue: User,
-  },
-];
+export const userProviders = {
+  provide: usersRepository,
+  useValue: User,
+};

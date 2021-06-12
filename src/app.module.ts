@@ -13,7 +13,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   controllers: [AppController, UsersController, AuthController],
-  providers: [AppService, UsersService, ...userProviders, AuthService],
+  providers: [AppService, UsersService, userProviders, AuthService],
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env' }),
     DatabaseModule,
