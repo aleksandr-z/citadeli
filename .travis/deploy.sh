@@ -5,5 +5,5 @@ ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/de
   cd $DEPLOY_PATH
   tar -xvf archive.tar
   rm archive.tar
-  pm2 reload main
+  pm2 reload ecosystem.config.js
 EOF

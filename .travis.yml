@@ -19,6 +19,7 @@ install:
   - ls -al
   - yarn
   - yarn build
+  - cp ./ecosystem.config.js ./dist/
 after_success:
   - tar -cvf archive.tar ./dist/ ./node_modules/
   - chmod 600 ./archive.tar
