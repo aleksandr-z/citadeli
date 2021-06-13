@@ -5,5 +5,5 @@ ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i ~/.ssh/de
   cd $DEPLOY_PATH
   tar -xvf archive.tar
   rm archive.tar
-  pm2 reload $DEPLOY_PATH/ecosystem.config.js
+  pm2 reload citadeli $DEPLOY_PATH/ecosystem.config.js
 EOF
